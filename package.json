@@ -11,11 +11,11 @@
     "reshape-plugin-util": "reshape/plugin-util"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
+    "ava": "^0.16.0",
     "coveralls": "^2.11.12",
     "nyc": "^7.1.0",
     "reshape": "reshape/reshape",
-    "snazzy": "^4.0.0",
+    "snazzy": "^4.0.1",
     "standard": "^7.1.2"
   },
   "homepage": "https://github.com/reshape/custom-elements",
@@ -28,10 +28,9 @@
   "main": "lib",
   "repository": "https://github.com/reshape/custom-elements",
   "scripts": {
-    "coverage": "nyc ava && nyc report --reporter=html",
+    "coverage": "nyc ava && nyc report --reporter=html && open ./coverage/index.html",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard | snazzy",
-    "mocha": "node_modules/.bin/_mocha",
-    "test": "npm run lint && npm run mocha"
+    "test": "npm run lint && nyc ava"
   }
 }

@@ -44,7 +44,7 @@ test('skip tags option', (t) => {
   return compare(t, html, expected, { skipTags: ['header'] })
 })
 
-function compare (t, html, expected, options = {}) {
+function compare (t, html, expected, options) {
   return reshape({ plugins: [customElements(options)] })
     .process(html)
     .then((res) => { t.is(res.output(), expected) })

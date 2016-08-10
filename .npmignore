@@ -1,2 +1,6 @@
 test/
 .editorconfig
+coverage
+.nyc_output
+.travis.yml
+contributing.md
