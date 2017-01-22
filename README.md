@@ -1,5 +1,7 @@
 # Reshape Custom Elements
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/reshape/custom-elements.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/reshape-custom-elements.svg?style=flat-square)](https://npmjs.com/package/reshape-custom-elements)
 [![tests](https://img.shields.io/travis/reshape/custom-elements.svg?style=flat-square)](https://travis-ci.org/reshape/custom-elements?branch=master)
 [![dependencies](https://img.shields.io/david/reshape/custom-elements.svg?style=flat-square)](https://david-dm.org/reshape/custom-elements)
