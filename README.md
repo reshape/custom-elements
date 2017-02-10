@@ -23,7 +23,7 @@ const html = `<my-component>
                 <my-text class="text">Text</my-text>
               </my-component>`
 
-reshape({plugins: customElements({defaultTag: 'span'})})
+reshape({plugins: [customElements({defaultTag: 'span'})]})
   .process(html)
   .then((res) => console.log(res.output()))
 ```
