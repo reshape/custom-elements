@@ -21,11 +21,11 @@ const customElements = require('reshape-custom-elements')
 
 const html = `<my-component>
                 <my-text class="text">Text</my-text>
-              </my-component>`;
+              </my-component>`
 
 reshape({plugins: customElements({defaultTag: 'span'})})
   .process(html)
-  .then(res => console.log(res.output()))
+  .then((res) => console.log(res.output()))
 ```
 
 ```html
