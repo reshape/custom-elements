@@ -20,12 +20,12 @@ const reshape = require('reshape')
 const customElements = require('reshape-custom-elements')
 
 const html = `<my-component>
-                <my-tex class="text">Text</my-text>
+                <my-text class="text">Text</my-text>
               </my-component>`
 
-reshape({ plugins: custom({ defaultTag: 'span' }))
-  .process(component)
-  .then((res) => console.log(result.output()))
+reshape({plugins: customElements({defaultTag: 'span'})})
+  .process(html)
+  .then((res) => console.log(res.output()))
 ```
 
 ```html
