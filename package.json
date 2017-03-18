@@ -16,7 +16,7 @@
     "nyc": "^10.0.0",
     "reshape": "reshape/reshape",
     "snazzy": "^6.0.0",
-    "standard": "^8.0.0"
+    "standard": "^9.0.2"
   },
   "homepage": "https://github.com/reshape/custom-elements",
   "keywords": [
