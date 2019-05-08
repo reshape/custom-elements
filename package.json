@@ -8,15 +8,15 @@
   },
   "bugs": "https://github.com/reshape/custom-elements/issues",
   "dependencies": {
-    "reshape-plugin-util": "reshape/plugin-util"
+    "reshape-plugin-util": "^0.2.1"
   },
   "devDependencies": {
-    "ava": "^0.19.0",
-    "coveralls": "^2.11.12",
-    "nyc": "^10.0.0",
-    "reshape": "reshape/reshape",
-    "snazzy": "^6.0.0",
-    "standard": "^10.0.0"
+    "ava": "^1.4.1",
+    "coveralls": "^3.0.3",
+    "nyc": "^14.1.0",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0",
+    "reshape": "^1.0.0"
   },
   "homepage": "https://github.com/reshape/custom-elements",
   "keywords": [
@@ -30,7 +30,7 @@
   "scripts": {
     "coverage": "nyc ava && nyc report --reporter=html && open ./coverage/index.html",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "standard | snazzy",
+    "lint": "pretty-quick",
     "test": "npm run lint && nyc ava"
   }
 }
