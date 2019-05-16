@@ -21,9 +21,12 @@ const customElements = require('reshape-custom-elements')
 
 const html = `<my-component>
                 <my-text class="text">Text</my-text>
+                
+                <!-- An actual HTML element defined in additionalTags -->
+                <label>Label</label>
               </my-component>`
 
-reshape({plugins: [customElements({defaultTag: 'span'})]})
+reshape({plugins: [customElements({replacementTag: 'span', additionalTags: ['label']})]})
   .process(html)
   .then((res) => console.log(res.output()))
 ```
@@ -31,6 +34,8 @@ reshape({plugins: [customElements({defaultTag: 'span'})]})
 ```html
 <span class="my-component">
   <span class="my-text text">Text</span>
+  
+  <span class="label">Label</span>
 </span>
 ```
 
@@ -38,8 +43,8 @@ reshape({plugins: [customElements({defaultTag: 'span'})]})
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **defaultTag** | Tag used to replace the custom element tag name | `div` |
-| **skipTags** | Array of tags to be processed despite being a normal html tag | `[]`
+| **replacementTag** | Tag used to replace the custom element tag name | `div` |
+| **additionalTags** | Array of tags to be processed despite being a normal html tag | `[]`
 
 ## License
 
