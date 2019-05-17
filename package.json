@@ -3,6 +3,7 @@
   "description": "transform custom element names into class names",
   "version": "0.2.0",
   "author": "Jeff Escalante",
+  "types": "index.d.ts",
   "ava": {
     "verbose": "true"
   },
