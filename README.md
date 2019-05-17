@@ -80,7 +80,8 @@ reshape({
 | Name                                | Description                                                                                                                       | Default            |
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | **replacementTag**                  | Tag used to replace the custom element tag name                                                                                   | `div`              |
-| **additionalTags**                  | Array of tags to be processed despite being a normal html tag                                                                     | `[]`               |
+| **additionalTags**                  | Array of tags to be processed despite being a normal HTML tag                                                                     | `[]`               |
+| **blacklist**                       | Array of tags that should not be processed                                                                                        | `[]`               |
 | **replacementTagMap**               | Object containing custom tag ↔ replacement tag mappings                                                                           | `{}`               |
 | **replacementTagOverrideAttribute** | Attribute name that can be used to locally override the used replacement tag. Overrides `replacementTag` and `replacementTagMap`. | `data-replacement` |
 

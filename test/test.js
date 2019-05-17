@@ -22,13 +22,13 @@ test('class already exists', t => {
 
 test('html tag match', t => {
   const html = '<header class="custom">Test</header>'
-  const expected = '<header class="custom">Test</header>'
+  const expected = html
   return compare(t, html, expected)
 })
 
 test('undefined options', t => {
   const html = '<div>Test</div>'
-  const expected = '<div>Test</div>'
+  const expected = html
   return compare(t, html, expected, undefined)
 })
 
@@ -75,6 +75,12 @@ test('custom replacement tag map overriding', t => {
   const html = '<custom data-replacement="span">Test</custom>'
   const expected = '<span class="custom">Test</span>'
   return compare(t, html, expected, { replacementTagMap: { custom: 'div' } })
+})
+
+test("don't replace blacklisted tags", t => {
+  const html = '<blacklisted>Keep my tag!</blacklisted>'
+  const expected = html
+  return compare(t, html, expected, { blacklist: ['blacklisted'] })
 })
 
 function compare(t, html, expected, options) {
