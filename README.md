@@ -15,26 +15,32 @@ npm i reshape-custom-elements --save
 
 ## Usage
 
+### Input HTML
+
+```html
+<my-component>
+  <my-text class="text">Text</my-text>
+
+  <!-- An actual HTML element defined in additionalTags -->
+  <label>Label</label>
+
+  <!-- Overriding the default replacement tag with a map -->
+  <my-footer>
+    Reshape is licensed under the MIT license
+  </my-footer>
+
+  <!-- Locally overriding the default replacement tag with an attribute -->
+  <my-text data-replacement="div">
+    This will get wrapped in a div instead of a span
+  </my-text>
+</my-component>
+```
+
+### Reshape processing
+
 ```js
 const reshape = require('reshape')
 const customElements = require('reshape-custom-elements')
-
-const html = `<my-component>
-                <my-text class="text">Text</my-text>
-                
-                <!-- An actual HTML element defined in additionalTags -->
-                <label>Label</label>
-                
-                <!-- Overriding the default replacement tag with a map -->
-                <my-footer>
-                  Reshape is licensed under the MIT license
-                </my-footer>
-                
-                <!-- Locally overriding the default replacement tag with an attribute -->
-                <my-text data-replacement="div">
-                  This will get wrapped in a div instead of a span
-                </my-text>
-              </my-component>`
 
 reshape({
   plugins: [
@@ -50,6 +56,8 @@ reshape({
   .process(html)
   .then(res => console.log(res.output()))
 ```
+
+### Output HTML
 
 ```html
 <span class="my-component">
