@@ -32,16 +32,22 @@ test('undefined options', (t) => {
   return compare(t, html, expected, undefined)
 })
 
-test('defaultTag', (t) => {
+test('replacementTag', (t) => {
   const html = '<custom class="custom">Test</custom>'
   const expected = '<span class="custom">Test</span>'
-  return compare(t, html, expected, { defaultTag: 'span' })
+  return compare(t, html, expected, { replacementTag: 'span' })
 })
 
-test('skip tags option', (t) => {
+test('additionalTags option', (t) => {
   const html = '<header class="custom">Test</header>'
   const expected = '<div class="custom header">Test</div>'
-  return compare(t, html, expected, { skipTags: ['header'] })
+  return compare(t, html, expected, { additionalTags: ['header'] })
+})
+
+test('backwards compatibility', (t) => {
+  const html = '<header class="custom">Test</header>'
+  const expected = '<span class="custom header">Test</span>'
+  return compare(t, html, expected, { defaultTag: 'span', skipTags: ['header'] })
 })
 
 function compare (t, html, expected, options) {
