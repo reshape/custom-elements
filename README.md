@@ -25,7 +25,12 @@ const html = `<my-component>
                 <!-- An actual HTML element defined in additionalTags -->
                 <label>Label</label>
                 
-                <!-- Overriding the default replacement tag -->
+                <!-- Overriding the default replacement tag with a map -->
+                <my-footer>
+                  Reshape is licensed under the MIT license
+                </my-footer>
+                
+                <!-- Locally overriding the default replacement tag with an attribute -->
                 <my-text data-replacement="div">
                   This will get wrapped in a div instead of a span
                 </my-text>
@@ -33,7 +38,13 @@ const html = `<my-component>
 
 reshape({
   plugins: [
-    customElements({ replacementTag: 'span', additionalTags: ['label'] })
+    customElements({
+      replacementTag: 'span',
+      additionalTags: ['label'],
+      replacementTagMap: {
+        'my-footer': 'footer'
+      }
+    })
   ]
 })
   .process(html)
@@ -49,16 +60,21 @@ reshape({
   <div class="my-text">
     This will get wrapped in a div instead of a span
   </div>
+
+  <footer class="my-footer">
+    Reshape is licensed under the MIT license
+  </footer>
 </span>
 ```
 
 ## Options
 
-| Name                                | Description                                                              | Default            |
-| ----------------------------------- | ------------------------------------------------------------------------ | ------------------ |
-| **replacementTag**                  | Tag used to replace the custom element tag name                          | `div`              |
-| **additionalTags**                  | Array of tags to be processed despite being a normal html tag            | `[]`               |
-| **replacementTagOverrideAttribute** | Attribute name that can be used to override the default `replacementTag` | `data-replacement` |
+| Name                                | Description                                                                                                                       | Default            |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| **replacementTag**                  | Tag used to replace the custom element tag name                                                                                   | `div`              |
+| **additionalTags**                  | Array of tags to be processed despite being a normal html tag                                                                     | `[]`               |
+| **replacementTagMap**               | Object containing custom tag ↔ replacement tag mappings                                                                           | `{}`               |
+| **replacementTagOverrideAttribute** | Attribute name that can be used to locally override the used replacement tag. Overrides `replacementTag` and `replacementTagMap`. | `data-replacement` |
 
 ## License
 

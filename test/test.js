@@ -65,6 +65,18 @@ test('custom replacement tag attribute', t => {
   return compare(t, html, expected, { replacementTagOverrideAttribute: 'tag' })
 })
 
+test('custom replacement tag map', t => {
+  const html = '<custom>Test</custom>'
+  const expected = '<span class="custom">Test</span>'
+  return compare(t, html, expected, { replacementTagMap: { custom: 'span' } })
+})
+
+test('custom replacement tag map overriding', t => {
+  const html = '<custom data-replacement="span">Test</custom>'
+  const expected = '<span class="custom">Test</span>'
+  return compare(t, html, expected, { replacementTagMap: { custom: 'div' } })
+})
+
 function compare(t, html, expected, options) {
   return reshape({ plugins: [customElements(options)] })
     .process(html)
