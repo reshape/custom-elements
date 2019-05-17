@@ -24,6 +24,11 @@ const html = `<my-component>
                 
                 <!-- An actual HTML element defined in additionalTags -->
                 <label>Label</label>
+                
+                <!-- Overriding the default replacement tag -->
+                <my-text data-replacement="div">
+                  This will get wrapped in a div instead of a span
+                </my-text>
               </my-component>`
 
 reshape({
@@ -40,15 +45,20 @@ reshape({
   <span class="my-text text">Text</span>
 
   <span class="label">Label</span>
+
+  <div class="my-text">
+    This will get wrapped in a div instead of a span
+  </div>
 </span>
 ```
 
 ## Options
 
-| Name               | Description                                                   | Default |
-| ------------------ | ------------------------------------------------------------- | ------- |
-| **replacementTag** | Tag used to replace the custom element tag name               | `div`   |
-| **additionalTags** | Array of tags to be processed despite being a normal html tag | `[]`    |
+| Name                                | Description                                                              | Default            |
+| ----------------------------------- | ------------------------------------------------------------------------ | ------------------ |
+| **replacementTag**                  | Tag used to replace the custom element tag name                          | `div`              |
+| **additionalTags**                  | Array of tags to be processed despite being a normal html tag            | `[]`               |
+| **replacementTagOverrideAttribute** | Attribute name that can be used to override the default `replacementTag` | `data-replacement` |
 
 ## License
 

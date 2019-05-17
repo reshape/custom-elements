@@ -53,6 +53,18 @@ test('backwards compatibility', t => {
   })
 })
 
+test('custom replacement tag', t => {
+  const html = '<custom data-replacement="span">Test</custom>'
+  const expected = '<span class="custom">Test</span>'
+  return compare(t, html, expected)
+})
+
+test('custom replacement tag attribute', t => {
+  const html = '<custom tag="span">Test</custom>'
+  const expected = '<span class="custom">Test</span>'
+  return compare(t, html, expected, { replacementTagOverrideAttribute: 'tag' })
+})
+
 function compare(t, html, expected, options) {
   return reshape({ plugins: [customElements(options)] })
     .process(html)
