@@ -71,6 +71,12 @@ test('custom replacement tag map', t => {
   return compare(t, html, expected, { replacementTagMap: { span: ['custom'] } })
 })
 
+test('infer additional tags from replacement tag map', t => {
+  const html = '<nav>Test</nav>'
+  const expected = '<div class="nav">Test</div>'
+  return compare(t, html, expected, { replacementTagMap: { div: ['nav'] } })
+})
+
 test('custom replacement tag map overriding', t => {
   const html = '<custom data-replacement="span">Test</custom>'
   const expected = '<span class="custom">Test</span>'

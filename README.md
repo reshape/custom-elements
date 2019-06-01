@@ -77,13 +77,13 @@ reshape({
 
 ## Options
 
-| Name                                | Description                                                                                                                                       | Default            |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| **defaultReplacementTag**           | Tag used to replace the custom element tag name                                                                                                   | `div`              |
-| **additionalTags**                  | Array of tags to be processed despite being a normal HTML tag                                                                                     | `[]`               |
-| **blacklist**                       | Array of tags that should never be processed                                                                                                      | `[]`               |
-| **replacementTagMap**               | Object containing custom tag ↔ replacement tag mappings in the format: `ReplacedTag: [ customTag1, customTag2, ... ]`. Overrides `replacementTag` | `{}`               |
-| **replacementTagOverrideAttribute** | Attribute name that can be used to locally override the used replacement tag. Overrides `replacementTag` and `replacementTagMap`                  | `data-replacement` |
+| Name                                | Description                                                                                                                                                | Default            |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| **defaultReplacementTag**           | Tag used to replace the custom element tag name                                                                                                            | `div`              |
+| **additionalTags**                  | Array of tags to be processed despite being a normal HTML tag. HTML tags that are used in the `replacementTagMap` will automatically be added to this list | `[]`               |
+| **blacklist**                       | Array of tags that should never be processed                                                                                                               | `[]`               |
+| **replacementTagMap**               | Object containing custom tag ↔ replacement tag mappings in the format: `ReplacedTag: [ customTag1, customTag2, ... ]`. Overrides `replacementTag`          | `{}`               |
+| **replacementTagOverrideAttribute** | Attribute name that can be used to locally override the used replacement tag. Overrides `replacementTag` and `replacementTagMap`                           | `data-replacement` |
 
 ## License
 
