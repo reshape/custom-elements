@@ -1,11 +1,16 @@
+export default function reshapeCustomElements(
+  options?: ReshapeCustomElementsOptions
+): Function
+
 export interface ReshapeCustomElementsOptions {
-  replacementTag: string
-  additionalTags: HtmlTags[]
+  defaultReplacementTag?: string
+  additionalTags?: HtmlTags[]
+  blacklist?: string[]
+  replacementTagMap?: ReplacementTagMap
+  replacementTagAttr?: string
 }
 
-export default function reshapeCustomElements(
-  options: ReshapeCustomElementsOptions
-): Function
+export type ReplacementTagMap = { [tag: string]: string[] }
 
 type HtmlTags =
   | 'a'

@@ -32,10 +32,10 @@ test('undefined options', t => {
   return compare(t, html, expected, undefined)
 })
 
-test('replacementTag', t => {
+test('defaultReplacementTag', t => {
   const html = '<custom class="custom">Test</custom>'
   const expected = '<span class="custom">Test</span>'
-  return compare(t, html, expected, { replacementTag: 'span' })
+  return compare(t, html, expected, { defaultReplacementTag: 'span' })
 })
 
 test('additionalTags option', t => {
