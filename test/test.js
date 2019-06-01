@@ -68,13 +68,13 @@ test('custom replacement tag attribute', t => {
 test('custom replacement tag map', t => {
   const html = '<custom>Test</custom>'
   const expected = '<span class="custom">Test</span>'
-  return compare(t, html, expected, { replacementTagMap: { custom: 'span' } })
+  return compare(t, html, expected, { replacementTagMap: { span: ['custom'] } })
 })
 
 test('custom replacement tag map overriding', t => {
   const html = '<custom data-replacement="span">Test</custom>'
   const expected = '<span class="custom">Test</span>'
-  return compare(t, html, expected, { replacementTagMap: { custom: 'div' } })
+  return compare(t, html, expected, { replacementTagMap: { div: ['custom'] } })
 })
 
 test("don't replace blacklisted tags", t => {
